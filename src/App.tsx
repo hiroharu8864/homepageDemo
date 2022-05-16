@@ -1,10 +1,6 @@
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
+import { RouterDom } from "./router/RouterDom";
 
-import { Home } from "./Home";
-import { Company } from "./Company";
-import { About } from "./About";
-import { CompanyLocation } from "./CompanyLocation";
-import { CompanyRecruit } from "./CompanyRecruit";
 import "./styles.css";
 
 export default function App() {
@@ -17,14 +13,7 @@ export default function App() {
         <br />
         <Link to="/about">About</Link>
       </div>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="location" element={<CompanyLocation />} />
-        <Route path="recruit" element={<CompanyRecruit />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <RouterDom />
     </BrowserRouter>
   );
 }
