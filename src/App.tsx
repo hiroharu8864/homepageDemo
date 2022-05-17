@@ -1,19 +1,15 @@
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { RouterDom } from "./router/RouterDom";
+import { DefaultLayout } from "./components/templates/DefaultLayout";
 
 import "./styles.css";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Link to="/">Home</Link>
-        <br />
-        <Link to="/company">Company</Link>
-        <br />
-        <Link to="/about">About</Link>
-      </div>
-      <RouterDom />
+      <DefaultLayout>
+        <RouterDom />
+      </DefaultLayout>
     </BrowserRouter>
   );
 }

@@ -8,9 +8,9 @@ import { CompanyRecruit } from "../CompanyRecruit";
 
 /**
  * react-router v6 対応
- * <Switch>から<Route>タグへの変更
- * ネストされた<Route>では親<Route>からの相対パスでpathを記載
- * <Route>に対応するコンポーネントはelement propsで記述
+ * 1) <Switch>から<Route>タグへの変更
+ * 2) ネストされた<Route>では親<Route>からの相対パスでpathを記載
+ * 3) <Route>に対応するコンポーネントはelement propsで記述
  */
 export const RouterDom = () => {
   return (
