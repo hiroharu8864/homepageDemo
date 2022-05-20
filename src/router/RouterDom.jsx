@@ -12,8 +12,7 @@ import { NotFound } from "../components/pages/NotFound";
  * 1) <Switch>から<Route>タグへの変更
  * 2) ネストされた<Route>では親<Route>からの相対パスでpathを記載
  * 3) <Route>に対応するコンポーネントはelement propsで記述
- */
-/**
+ *
  * Element要素にレイアウトを渡す
  * <Route path="home" element={<HeaderLayout><Outlet /></HeaderLayout>} >
  *  <Route index element={<Home />} />
@@ -23,8 +22,7 @@ import { NotFound } from "../components/pages/NotFound";
  *    ))
  *  }
  * </Route>
- */
-/**
+ *
  * 直接遷移
  * <Route path="company" element={<Outlet />}>
  * <Route index element={<Company />} />
