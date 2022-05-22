@@ -5,6 +5,7 @@ import { Company } from "../components/pages/Company";
 import { About } from "../components/pages/About";
 import { CompanyLocation } from "../components/pages/CompanyLocation";
 import { CompanyRecruit } from "../components/pages/CompanyRecruit";
+import { CompanyComment } from "../components/pages/CompanyComment";
 import { NotFound } from "../components/pages/NotFound";
 
 /**
@@ -37,6 +38,7 @@ export const RouterDom = () => {
       <Route path="company" element={<Company />}>
         <Route path="location" element={<CompanyLocation />} />
         <Route path="recruit" element={<CompanyRecruit />} />
+        <Route path="comment" element={<CompanyComment />} />
       </Route>
       <Route path="about" element={<About />} />
       <Route path="*" element={<NotFound />} />
