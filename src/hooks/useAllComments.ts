@@ -4,8 +4,8 @@ import axios from "axios";
 import { Comment } from "../types/api/comment";
 
 export const useAllComments = () => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [comments, setComments] = useState<Array<Comment>>();
+  // const [loading, setLoading] = useState<boolean>(false);
+  const [comments, setComments] = useState<Array<Comment>>([]);
 
   const getComments = useCallback(() => {
     axios
@@ -14,5 +14,5 @@ export const useAllComments = () => {
       .catch(() => {});
   }, []);
 
-  return { getComments, loading, comments };
+  return { getComments, comments };
 };
