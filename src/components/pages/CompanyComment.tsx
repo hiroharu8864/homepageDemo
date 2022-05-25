@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useAllComments } from "../../hooks/useAllComments";
+import { CommentCard } from "../organisms/Comment/CommentCard";
 
 /**
  * postId: number;
@@ -17,6 +18,7 @@ export const CompanyComment = () => {
     <>
       <div>
         <h1>一覧表示テスト</h1>
+        <CommentCard />
         {comments.map((comment) => (
           <p key={comment.id}>
             {comment.id}
