@@ -1,13 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { DefaultLayout } from "../components/templates/DefaultLayout";
 
 import { Home } from "../components/pages/Home";
 import { Company } from "../components/pages/Company";
 import { About } from "../components/pages/About";
-import { CompanyLocation } from "../components/pages/CompanyLocation";
-import { CompanyRecruit } from "../components/pages/CompanyRecruit";
-import { CompanyComment } from "../components/pages/CompanyComment";
-import { NotFound } from "../components/pages/NotFound";
 
+import { NotFound } from "../components/pages/NotFound";
+import { CompanyRoutes } from "./CompanyRoutes";
 /**
  * react-router v6 対応
  * 1) <Switch>から<Route>タグへの変更
@@ -33,15 +32,46 @@ import { NotFound } from "../components/pages/NotFound";
  */
 export const RouterDom = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="company" element={<Company />}>
-        <Route path="location" element={<CompanyLocation />} />
-        <Route path="recruit" element={<CompanyRecruit />} />
-        <Route path="comment" element={<CompanyComment />} />
-      </Route>
-      <Route path="about" element={<About />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <DefaultLayout>
+                <Home />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="company"
+            element={
+              <DefaultLayout>
+                <Outlet />
+              </DefaultLayout>
+            }
+          >
+            <Route index element={<Company />} />
+            {CompanyRoutes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.children}
+              />
+            ))}
+          </Route>
+
+          <Route
+            path="about"
+            element={
+              <DefaultLayout>
+                <About />
+              </DefaultLayout>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
