@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CommentCard = () => {
+export const CommentCard = (props) => {
   const SDiv = styled.div`
     background-color: #e4f9f5;
     box-shadow: #ddd 0px 0px 4px 2px;
@@ -28,12 +28,16 @@ export const CommentCard = () => {
     }
   `;
 
+  const { comments } = props;
+
   return (
     <SDiv>
-      <dl>
-        <dt>TESTaaaaa</dt>
-        <dd>TEST</dd>
-      </dl>
+      {comments.map((comment) => (
+        <dl key={comment.id}>
+          <dt>{comment.id}</dt>
+          <dd>{comment.name}</dd>
+        </dl>
+      ))}
     </SDiv>
   );
 };
