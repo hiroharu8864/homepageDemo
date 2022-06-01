@@ -18,7 +18,6 @@ export const CompanyComment = () => {
     <>
       <div>
         <h1>一覧表示テスト</h1>
-        <CommentCard comments={comments} />
         {comments.map((comment) => (
           <p key={comment.id}>
             {comment.id}
