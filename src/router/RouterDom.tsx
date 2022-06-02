@@ -47,11 +47,10 @@ export const RouterDom = () => {
             path="company"
             element={
               <DefaultLayout>
-                <Outlet />
+                <Company />
               </DefaultLayout>
             }
           >
-            <Route index element={<Company />} />
             {CompanyRoutes.map((route) => (
               <Route
                 key={route.path}
