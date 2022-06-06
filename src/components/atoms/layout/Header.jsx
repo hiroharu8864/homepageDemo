@@ -4,9 +4,11 @@ import styled from "styled-components";
 export const Header = () => {
   return (
     <SHeader>
-      <SLink to="/">トップページ</SLink>
-      <SLink to="/company">会社概要</SLink>
-      <SLink to="/about">本サイトについて</SLink>
+      <nav>
+        <SLink to="/">トップページ</SLink> |{" "}
+        <SLink to="/company">会社概要</SLink> |{" "}
+        <SLink to="/about">本サイトについて</SLink>
+      </nav>
     </SHeader>
   );
 };
