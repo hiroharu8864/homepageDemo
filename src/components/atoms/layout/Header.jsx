@@ -7,7 +7,8 @@ export const Header = () => {
       <nav>
         <SLink to="/">トップページ</SLink> |{" "}
         <SLink to="/company">会社概要</SLink> |{" "}
-        <SLink to="/about">本サイトについて</SLink>
+        <SLink to="/about">本サイトについて</SLink> |{" "}
+        <SLink to="/sample">Sample</SLink>
       </nav>
     </SHeader>
   );

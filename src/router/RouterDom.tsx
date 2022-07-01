@@ -1,9 +1,11 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DefaultLayout } from "../components/templates/DefaultLayout";
 
 import { Home } from "../components/pages/Home";
 import { Company } from "../components/pages/Company";
 import { About } from "../components/pages/About";
+import { SampleProgram } from "../components/pages/SampleProgram";
+import { TestPage } from "../components/pages/TestPage";
 
 import { NotFound } from "../components/pages/NotFound";
 import { CompanyRoutes } from "./CompanyRoutes";
@@ -65,6 +67,22 @@ export const RouterDom = () => {
             element={
               <DefaultLayout>
                 <About />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="sample"
+            element={
+              <DefaultLayout>
+                <SampleProgram />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="test"
+            element={
+              <DefaultLayout>
+                <TestPage />
               </DefaultLayout>
             }
           />
